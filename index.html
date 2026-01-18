@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>帝王科技</title>
-<meta name="keywords" content="彩虹引擎工作室,彩虹引擎独立端,彩虹引擎盛大端,彩虹引擎论坛,彩虹引擎教程,彩虹引擎说明书">
-<link rel="shortcut icon" href="./favicon.ico">
-<link rel="stylesheet" href="css/mystyle.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帝王科技</title>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 </head>
  
 <body>
-    <section1>
+
+    <section class="section1">
         <div class="color"></div>
         <div class="color"></div>
         <div class="color"></div>
@@ -24,22 +25,36 @@
             
             <div class="container1">
                 <div class="form1">
-                    <p class="main">帝王科技</p>
-                   <div class="main1">
-	                <ul class="mynav">
-	                        <li>官方网站：www.dwkj.me</li>
-	                       	<li>电子邮箱：diwangkeji#outlook.com (#换@)</li>
-	                    </ul>	
-                  </div>
+                    <h1 class="main">帝王科技</h1>
+                    <div class="main1">
+                        <ul class="mynav">
+                            <li>官方网站：www.dwkj.me</li>
+                            <li>电子邮箱：diwangkeji#outlook.com (#换@)</li>
+                        </ul>	
+                    </div>
                 </div>
             </div>
         </div>
-    </section1>
+    </section>
 
-<script>
-     $(document).ready(function(){
-    $('[data-toggle="popover"]').popover(); 
-     });
-	</script>
+    <div id="waline-wrap">
+        <div id="waline"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover(); 
+        });
+    </script>
+
+    <script type="module">
+        import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+        init({
+            el: '#waline',
+            serverURL: 'https://api.queryip.top',
+        });
+    </script>
+
 </body>
 </html>
